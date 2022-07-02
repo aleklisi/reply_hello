@@ -1,0 +1,17 @@
+{application, reply_hello,
+ [{description, "Cowboy Hello heroku answer generator."},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {reply_hello_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    jsone,
+	cowboy
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
