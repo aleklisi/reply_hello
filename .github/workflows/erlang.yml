@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
         matrix:
-          otp: ['25.0.1', '24.3.3', '23.3.4.11']
-          rebar3: ['3.18', '3.17']
+          otp: ['25.0.1']
+          rebar3: ['3.18']
     name: Erlang/OTP ${{matrix.otp}} / rebar3 ${{matrix.rebar3}}
     steps:
       - uses: actions/checkout@v2
