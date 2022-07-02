@@ -1,0 +1,21 @@
+name: Erlang CI
+
+on: [push]
+
+jobs:
+  All:
+    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+          otp: ['25.0.1', '24.3.3', '23.3.4.11']
+          rebar3: ['3.18', '3.17']
+    name: Erlang/OTP ${{matrix.otp}} / rebar3 ${{matrix.rebar3}}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: ${{matrix.otp}}
+          rebar3-version: ${{matrix.rebar3}}
+
+      - name: Run tests
+        run: make run_tests
