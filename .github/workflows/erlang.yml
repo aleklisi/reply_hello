@@ -17,5 +17,8 @@ jobs:
           otp-version: ${{matrix.otp}}
           rebar3-version: ${{matrix.rebar3}}
 
+      - name: Compile
+        run: make compile
+
       - name: Run tests
         run: make run_tests

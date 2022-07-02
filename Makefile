@@ -1,11 +1,14 @@
+compile:
+	rebar3 compile
+
+format:
+	rebar3 fmt
+
 shell:
 	FACEBOOK_TOKEN="fb_token_value" rebar3 shell
 
 run_tests:
 	FACEBOOK_TOKEN="fb_token_value" rebar3 ct
-
-format:
-	rebar3 fmt
 
 build_docker:
 	docker build -t erlang_reply_hello .
