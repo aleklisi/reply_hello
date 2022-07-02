@@ -8,6 +8,7 @@ suite() ->
     [{timetrap, {minutes, 1}}].
 
 init_per_suite(Config) ->
+    {ok, _} = application:ensure_all_started(hackney),
     {ok, _} = application:ensure_all_started(reply_hello),
     Config.
 
